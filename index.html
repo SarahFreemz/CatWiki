@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CatWiki</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+	<style>
+		:root {
+			--theme-color: #3366cc;
+			--sidebar-width: 14.5rem;
+			--content-shift: 10.75rem;
+			--article-max-width: 58rem;
+			--article-pad-x: clamp(1.25rem, 3vw, 2.75rem);
+			--article-pad-y: clamp(1rem, 1.2vw + 0.6rem, 1.35rem);
+			--wiki-page-bg: #f6f6f6;
+			--wiki-paper: #ffffff;
+			--wiki-border: #a7d7f9;
+			--wiki-rule: #a2a9b1;
+			--wiki-text: #202122;
+			--wiki-muted: #54595d;
+			--wiki-link: #0645ad;
+			--wiki-link-visited: #0b0080;
+			--wiki-head: #000000;
+		}
+
+		body {
+			background: var(--wiki-page-bg);
+			color: var(--wiki-text);
+			font-family: sans-serif;
+			font-size: 14px;
+			line-height: 1.55;
+			position: relative;
+		}
+
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0 0 auto 0;
+			height: 4.8rem;
+			background: linear-gradient(to bottom, #ffffff 0%, #ffffff 60%, #f6f6f6 100%);
+			border-bottom: 1px solid #c8ccd1;
+			pointer-events: none;
+			z-index: 12;
+		}
+
+		.app-name {
+			font-family: "Linux Libertine", "Times New Roman", Times, serif;
+			font-size: 1.55rem;
+			font-weight: 400;
+			line-height: 1.2;
+			letter-spacing: 0;
+			color: var(--wiki-head);
+			margin: 0.35rem 0 0.5rem;
+			padding-bottom: 0.35rem;
+			border-bottom: 1px solid #c8ccd1;
+		}
+
+		.sidebar {
+			background: var(--wiki-paper);
+			border-right: 1px solid #c8ccd1;
+			width: var(--sidebar-width);
+			top: 4.8rem;
+			height: calc(100vh - 4.8rem);
+			padding-top: 0.8rem;
+			z-index: 8;
+		}
+
+		.sidebar-toggle {
+			position: fixed;
+			top: 5.15rem;
+			left: 0.75rem;
+			bottom: auto;
+			width: auto;
+			min-width: 0;
+			z-index: 30;
+			padding: 0.45rem 0.5rem;
+			border: 1px solid #a2a9b1;
+			background: #ffffff;
+		}
+
+		body.close .sidebar-toggle {
+			width: auto;
+		}
+
+		.sidebar ul,
+		.sidebar li {
+			line-height: 1.35;
+			list-style: none;
+		}
+
+		.sidebar ul li a {
+			color: var(--wiki-link);
+			text-decoration: none;
+			font-size: 0.88rem;
+		}
+
+		.sidebar ul li a:hover,
+		.sidebar ul li.active > a {
+			text-decoration: underline;
+			color: var(--wiki-link-visited);
+		}
+
+		.sidebar ul > li {
+			margin: 0.35rem 0;
+		}
+
+		.search {
+			margin-bottom: 0.65rem;
+			padding-bottom: 0.65rem;
+			border-bottom: 1px solid #c8ccd1;
+		}
+
+		.search input {
+			border: 1px solid #a2a9b1;
+			border-radius: 0;
+			font-size: 0.9rem;
+			background: #fff;
+		}
+
+		.content {
+			background: var(--wiki-paper);
+			border: 1px solid var(--wiki-border);
+			border-top: 0;
+			margin-top: 0.65rem;
+			z-index: 1;
+			position: relative;
+		}
+
+		@media (min-width: 769px) {
+			.sidebar {
+				width: var(--sidebar-width);
+				left: 0;
+			}
+
+			/* Keep toggle inside sidebar when expanded; park near left edge when collapsed. */
+			body:not(.close) .sidebar-toggle {
+				left: calc(var(--sidebar-width) - 2.5rem);
+			}
+
+			body.close .sidebar-toggle {
+				left: 0.75rem;
+			}
+
+			body:not(.close) .content {
+				left: 0;
+				width: auto;
+				margin-left: var(--sidebar-width);
+			}
+
+			body.close .content {
+				left: 0;
+				width: auto;
+				margin-left: 0;
+			}
+
+			body.close .sidebar {
+				left: calc(-1 * var(--sidebar-width));
+				transform: none !important;
+			}
+		}
+
+		.markdown-section {
+			max-width: var(--article-max-width);
+			margin: 0 auto;
+			padding: var(--article-pad-y) var(--article-pad-x) clamp(1.35rem, 2vw, 2rem);
+			color: var(--wiki-text);
+			line-height: 1.62;
+			font-size: 0.94rem;
+			overflow-wrap: anywhere;
+		}
+
+		.markdown-section > :first-child {
+			margin-top: 0;
+		}
+
+		.markdown-section h1,
+		.markdown-section h2 {
+			color: var(--wiki-head);
+			border-bottom: 1px solid var(--wiki-rule);
+			font-family: "Linux Libertine", "Times New Roman", Times, serif;
+			font-weight: 400;
+			line-height: 1.32;
+			padding-bottom: 0.14rem;
+			margin-top: 1.25rem;
+			margin-bottom: 0.55rem;
+		}
+
+		.markdown-section h1 {
+			font-size: clamp(1.55rem, 2.1vw + 0.9rem, 1.9rem);
+			line-height: 1.2;
+			margin-bottom: 0.6rem;
+		}
+
+		.markdown-section h2 {
+			font-size: clamp(1.3rem, 1.2vw + 0.95rem, 1.55rem);
+		}
+
+		.markdown-section h3 {
+			font-size: clamp(1rem, 0.7vw + 0.86rem, 1.14rem);
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: 600;
+			line-height: 1.4;
+			color: #1f2933;
+			border-bottom: 0;
+			padding-bottom: 0;
+			margin-top: 1rem;
+			margin-bottom: 0.35rem;
+			letter-spacing: 0.01em;
+		}
+
+		.markdown-section h4 {
+			font-size: clamp(0.82rem, 0.5vw + 0.72rem, 0.94rem);
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: 700;
+			line-height: 1.35;
+			color: #4a5560;
+			border-bottom: 0;
+			padding-bottom: 0;
+			margin-top: 0.8rem;
+			margin-bottom: 0.3rem;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+		}
+
+		.markdown-section p,
+		.markdown-section li,
+		.markdown-section dt,
+		.markdown-section dd {
+			font-size: 1rem;
+		}
+
+		.markdown-section a {
+			color: var(--wiki-link);
+			text-decoration: none;
+		}
+
+		.markdown-section a:hover {
+			color: var(--wiki-link-visited);
+			text-decoration: underline;
+		}
+
+		.markdown-section a:visited {
+			color: var(--wiki-link-visited);
+		}
+
+		.markdown-section blockquote {
+			border-left: 3px solid var(--wiki-border);
+			margin: 1rem 0;
+			padding: 0.2rem 0.95rem;
+			background: #f8f9fa;
+			color: var(--wiki-muted);
+		}
+
+		.markdown-section .hatnote {
+			font-size: 0.92rem;
+			line-height: 1.45;
+			font-style: italic;
+			color: var(--wiki-muted);
+			margin: 0.2rem 0 0.9rem;
+		}
+
+		.markdown-section .wiki-infobox {
+			float: right;
+			clear: right;
+			width: 240px;
+			max-width: 100%;
+			margin: 0.15rem -0.45rem 0.85rem 1.6rem;
+			border: 1px solid #a2a9b1;
+			background: #f8f9fa;
+			font-size: 0.84rem;
+			line-height: 1.4;
+		}
+
+		.markdown-section .wiki-infobox table {
+			width: 100%;
+			margin: 0;
+			border-collapse: collapse;
+			border: 0;
+			background: transparent;
+		}
+
+		.markdown-section .wiki-infobox th,
+		.markdown-section .wiki-infobox td {
+			border: 1px solid #a2a9b1;
+			padding: 0.28rem 0.4rem;
+			font-size: 0.8rem;
+			vertical-align: top;
+		}
+
+		.markdown-section .wiki-infobox .title {
+			background: #cedff2;
+			font-family: "Linux Libertine", "Times New Roman", Times, serif;
+			font-size: 1rem;
+			font-weight: 600;
+			text-align: center;
+		}
+
+		.markdown-section .wiki-infobox .image-cell {
+			padding: 0.35rem;
+			background: #fff;
+			text-align: center;
+		}
+
+		.markdown-section .wiki-infobox .image-cell img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border: 1px solid #c8ccd1;
+		}
+
+		.markdown-section .wiki-infobox .caption {
+			font-size: 0.72rem;
+			line-height: 1.3;
+			color: #202122;
+			margin-top: 0.3rem;
+		}
+
+		.markdown-section .wiki-infobox th {
+			width: 40%;
+			text-align: left;
+			background: #eaecf0;
+			font-weight: 600;
+		}
+
+		.markdown-section .wiki-infobox td {
+			background: #fff;
+		}
+
+		.markdown-section figure.wiki-thumb {
+			display: block;
+			box-sizing: border-box;
+			width: 260px !important;
+			max-width: 260px !important;
+			margin: 0.35rem 0 1rem 1.5rem;
+			padding: 3px;
+			border: 1px solid #c8ccd1;
+			background: #f8f9fa;
+			font-size: 0.88rem;
+			line-height: 1.45;
+		}
+
+		.markdown-section figure.wiki-thumb.right {
+			float: right !important;
+			clear: right;
+		}
+
+		.markdown-section figure.wiki-thumb.left {
+			float: left !important;
+			clear: left;
+			margin: 0.35rem 1.5rem 1rem 0;
+		}
+
+		.markdown-section figure.wiki-thumb.center {
+			float: none;
+			margin: 1rem auto;
+		}
+
+		.markdown-section figure.wiki-thumb img {
+			display: block;
+			width: 100%;
+			height: auto;
+			background: #fff;
+			border: 1px solid #c8ccd1;
+		}
+
+		.markdown-section figure.wiki-thumb figcaption {
+			display: block;
+			padding: 0.28rem 0.1rem 0.05rem;
+			color: #202122;
+			text-align: left;
+			font-size: 0.78rem;
+			line-height: 1.3;
+		}
+
+		.markdown-section figure.wiki-thumb.small {
+			width: 200px !important;
+			max-width: 200px !important;
+		}
+
+		.markdown-section figure.wiki-thumb.large {
+			width: 320px !important;
+			max-width: 320px !important;
+		}
+
+		.markdown-section::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.markdown-section img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.markdown-section pre,
+		.markdown-section code {
+			overflow-wrap: break-word;
+		}
+
+		.markdown-section > table {
+			display: block;
+			max-width: 100%;
+			overflow-x: auto;
+			white-space: nowrap;
+		}
+
+		.markdown-section table {
+			border-collapse: collapse;
+			border: 1px solid var(--wiki-border);
+			font-size: 0.95rem;
+			background: var(--wiki-paper);
+			margin: 0.5rem 0 1rem;
+		}
+
+		.markdown-section th,
+		.markdown-section td {
+			border: 1px solid var(--wiki-border);
+			padding: 0.35rem 0.55rem;
+			vertical-align: top;
+		}
+
+		.markdown-section th {
+			background: var(--wiki-rule);
+			font-weight: 600;
+		}
+
+		.markdown-section hr {
+			border: 0;
+			border-top: 1px solid var(--wiki-rule);
+		}
+
+		.pagination-item-title,
+		.pagination-item-label {
+			color: #202122;
+		}
+
+		@media (min-width: 769px) and (max-width: 1100px) {
+			.markdown-section .wiki-infobox {
+				width: 220px;
+				margin-left: 1rem;
+				margin-right: 0;
+			}
+
+			.markdown-section figure.wiki-thumb {
+				width: 220px !important;
+				max-width: 220px !important;
+				margin-left: 1rem;
+			}
+
+			.markdown-section figure.wiki-thumb.small {
+				width: 180px !important;
+				max-width: 180px !important;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.content {
+				border-left: 1px solid var(--wiki-border);
+				margin-top: 0;
+				left: 0;
+				width: 100%;
+			}
+
+			.markdown-section {
+				padding: 1rem 1rem 1.5rem;
+			}
+
+			.markdown-section figure.wiki-thumb,
+			.markdown-section figure.wiki-thumb.left,
+			.markdown-section figure.wiki-thumb.right,
+			.markdown-section .wiki-infobox,
+			.markdown-section figure.wiki-thumb.center {
+				float: none;
+				width: 100%;
+				max-width: 100%;
+				margin: 1rem auto;
+			}
+
+			.markdown-section > table {
+				white-space: normal;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="app">Loading CatWiki...</div>
+
+	<script>
+		window.$docsify = {
+			name: "CatWiki",
+			repo: "",
+			loadSidebar: "_sidebar.md",
+			subMaxLevel: 3,
+			homepage: "README.md",
+			noCache: true,
+			relativePath: false,
+			auto2top: true
+		};
+	</script>
+	<script>
+		(function forceFreshMarkdownFetches() {
+			const originalFetch = window.fetch.bind(window);
+			window.fetch = function (input, init) {
+				try {
+					const base = window.location.href;
+					const requestUrl = typeof input === "string" ? input : input?.url;
+					if (!requestUrl) return originalFetch(input, init);
+
+					const url = new URL(requestUrl, base);
+					const sameOrigin = url.origin === window.location.origin;
+					const isMarkdown = /\.md$/i.test(url.pathname);
+
+					if (sameOrigin && isMarkdown) {
+						url.searchParams.set("_cwcb", String(Date.now()));
+						if (typeof input === "string") {
+							input = url.toString();
+						} else {
+							input = new Request(url.toString(), input);
+						}
+					}
+				} catch (_err) {
+					// Fall through to original fetch if URL parsing fails.
+				}
+
+				return originalFetch(input, init);
+			};
+
+			const originalXhrOpen = XMLHttpRequest.prototype.open;
+			XMLHttpRequest.prototype.open = function (method, url, async, user, password) {
+				const args = Array.from(arguments);
+				try {
+					const parsedUrl = new URL(String(url), window.location.href);
+					const sameOrigin = parsedUrl.origin === window.location.origin;
+					const isMarkdown = /\.md$/i.test(parsedUrl.pathname);
+
+					if (sameOrigin && isMarkdown) {
+						parsedUrl.searchParams.set("_cwcb", String(Date.now()));
+						args[1] = parsedUrl.toString();
+					}
+				} catch (_err) {
+					// Fall back to the original URL if parsing fails.
+				}
+
+				return originalXhrOpen.apply(this, args);
+			};
+		})();
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+	<script>
+		function parseBirthday(value) {
+			if (!value) return null;
+			const text = value.trim();
+			if (!text || /^(tbd|unknown|n\/a)$/i.test(text)) return null;
+
+			const date = new Date(text);
+			if (Number.isNaN(date.getTime())) return null;
+			return date;
+		}
+
+		function formatAgeFromBirthday(birthday) {
+			const now = new Date();
+			let years = now.getFullYear() - birthday.getFullYear();
+			let months = now.getMonth() - birthday.getMonth();
+
+			if (now.getDate() < birthday.getDate()) {
+				months -= 1;
+			}
+
+			if (months < 0) {
+				years -= 1;
+				months += 12;
+			}
+
+			if (years < 0) return null;
+
+			if (years < 1) {
+				const totalMonths = years * 12 + months;
+				return `${totalMonths} month${totalMonths === 1 ? "" : "s"}`;
+			}
+
+			return `${years} year${years === 1 ? "" : "s"}`;
+		}
+
+		function updateInfoboxAges() {
+			const infoboxes = document.querySelectorAll(".wiki-infobox");
+			infoboxes.forEach((box) => {
+				let birthdayCell = null;
+				let ageCell = null;
+
+				box.querySelectorAll("tr").forEach((row) => {
+					const th = row.querySelector("th");
+					const td = row.querySelector("td");
+					if (!th || !td) return;
+
+					const label = th.textContent.trim().toLowerCase();
+					if (label === "birthday") birthdayCell = td;
+					if (label === "age") ageCell = td;
+				});
+
+				if (!birthdayCell || !ageCell) return;
+
+				const birthday = parseBirthday(birthdayCell.textContent);
+				if (!birthday) return;
+
+				const ageText = formatAgeFromBirthday(birthday);
+				if (ageText) {
+					ageCell.textContent = ageText;
+				}
+			});
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			updateInfoboxAges();
+
+			const app = document.getElementById("app");
+			if (!app) return;
+
+			const observer = new MutationObserver(() => {
+				updateInfoboxAges();
+			});
+
+			observer.observe(app, { childList: true, subtree: true });
+		});
+	</script>
+</body>
+</html>
