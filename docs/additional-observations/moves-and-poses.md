@@ -11,7 +11,7 @@ Frequently observed subjects: [Simon](/cats/simon.md)
 ## Caterpillar/Worm
 
 <figure class="wiki-thumb right small">
-	<img src="/assets/images/IMG_20260309_010007153_HDR.jpg" alt="Simon, a long-haired brown tabby, demonstrating the Caterpillar pose on a gray couch" />
+	<img src="assets/images/IMG_20260309_010007153_HDR.jpg" alt="Simon, a long-haired brown tabby, demonstrating the Caterpillar pose on a gray couch" />
 	<figcaption>Simon demonstrating the Caterpillar pose</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ Feline subjects will sometimes curl up into a little Cinnamon Roll (alternativel
 ## Hangy Hands
 
 <figure class="wiki-thumb right small">
-	<img src="/assets/images/Snapchat-241371368.jpg" alt="Simon, a long-haired brown tabby cat, demonstrating the Hangy Hands posture" />
+	<img src="assets/images/Snapchat-241371368.jpg" alt="Simon, a long-haired brown tabby cat, demonstrating the Hangy Hands posture" />
 	<figcaption>Simon displaying his Hangy Hands</figcaption>
 </figure>
 

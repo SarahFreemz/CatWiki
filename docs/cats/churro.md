@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td colspan="2" class="image-cell">
-                <img src="/assets/images/Snapchat-2075695772.jpg?v=2" alt="A small gray kitten with white paws" />
+                <img src="assets/images/Snapchat-2075695772.jpg?v=2" alt="A small gray kitten with white paws" />
                 <div class="caption">Churro</div>
             </td>
         </tr>
@@ -72,7 +72,7 @@ When Churro flops, whether on [Mom](/people/sarah.md), [Dad](/people/jon.md), or
 
 <figure class="wiki-thumb right small">
 
-  <img src="/assets/images/IMG_20260718_193501638_HDR.jpg" alt="a blurry photo of a small gray kitten falling off of a toilet lid" />
+  <img src="assets/images/IMG_20260718_193501638_HDR.jpg" alt="a blurry photo of a small gray kitten falling off of a toilet lid" />
 
   <figcaption>The Scrambledy Bamble</figcaption>
 
@@ -84,7 +84,7 @@ The Scrambledy Bamble is a creative style of movement Churro applies in a variet
 
 <figure class="wiki-thumb right small">
 
-  <img src="/assets/images/Snapchat-2144500326.jpg" alt="Churro, a small gray kitten, posing theatrically while being held by a dark haired woman, leaning to the side and staring down the camera lens" />
+  <img src="assets/images/Snapchat-2144500326.jpg" alt="Churro, a small gray kitten, posing theatrically while being held by a dark haired woman, leaning to the side and staring down the camera lens" />
 
   <figcaption>Supermodel Pose</figcaption>
 

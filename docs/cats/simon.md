@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td colspan="2" class="image-cell">
-                <img src="/assets/images/Snapchat-1481746451.jpg" alt="A long-haired brown tabby cat wearing an orange bowtie" />
+                <img src="assets/images/Snapchat-1481746451.jpg" alt="A long-haired brown tabby cat wearing an orange bowtie" />
                 <div class="caption">Simon posing in his Halloween bowtie</div>
             </td>
         </tr>

@@ -7,7 +7,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" class="image-cell">
-				<img src="/assets/images/Snapchat-795492548.jpg" alt="Subject profile photo" />
+				<img src="assets/images/Snapchat-795492548.jpg" alt="Subject profile photo" />
 				<div class="caption">Subject profile photo.</div>
 			</td>
 		</tr>

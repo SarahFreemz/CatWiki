@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td colspan="2" class="image-cell">
-                <img src="/assets/images/IMG_20260710_223641372_HDR.jpg?v=2" alt="two small gray kittens with white paws sitting together" />
+                <img src="assets/images/IMG_20260710_223641372_HDR.jpg?v=2" alt="two small gray kittens with white paws sitting together" />
                 <div class="caption">Churro and Horchata</div>
             </td>
         </tr>

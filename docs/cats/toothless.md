@@ -9,7 +9,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" class="image-cell">
-				<img src="/assets/images/Snapchat-1881794736.jpg" alt="Toothless, a black cat with yellow eyes and a single white eyebrow hair" />
+				<img src="assets/images/Snapchat-1881794736.jpg" alt="Toothless, a black cat with yellow eyes and a single white eyebrow hair" />
 				<div class="caption">Toothless</div>
 			</td>
 		</tr>
