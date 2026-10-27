@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<th>Other names</th>
-			<td>The Bub  &middot; Dingus McBingus</td>
+			<td>The Bub  &middot; Dingus McBingus &middot; Mr. Man</td>
 		</tr>		
 		<tr>
 			<th>Breed</th>

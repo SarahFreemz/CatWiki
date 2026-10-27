@@ -581,6 +581,11 @@
 				return `${totalMonths} month${totalMonths === 1 ? "" : "s"}`;
 			}
 
+			if (years < 2) {
+				if (months === 0) return "1 year";
+				return `1 year, ${months} month${months === 1 ? "" : "s"}`;
+			}
+
 			return `${years} year${years === 1 ? "" : "s"}`;
 		}
 
@@ -606,7 +611,7 @@
 				if (!birthday) return;
 
 				const ageText = formatAgeFromBirthday(birthday);
-				if (ageText) {
+				if (ageText && ageCell.textContent.trim() !== ageText) {
 					ageCell.textContent = ageText;
 				}
 			});

@@ -48,24 +48,24 @@ Simon's first 3 years were spent with his first mom and her partner. When they b
 
 Simon is a long-haired brown tabby with green eyes. He wears a dramatic graphic winged eyeliner look, which is why he has been brought on as [Sarah's](/people/sarah.md) makeup assistant. He possesses remarkable toe tufties and ear tufties, as befit his station. 
 
-When wearing a collar, Simon prefers to wear a dapper bowtie.
+When wearing a collar, Simon prefers to wear one with a dapper bowtie.
 
 ## Anatomy
 
 Simon's brain is made entirely of ham, prompting his middle name of Hamford. Given his lack of Orange pigment, he is not entitled to a turn with the brain cell, preventing him from ever having a thought. He prefers touches over treats, though he will accept treats when available. The closest thing he’s ever had to a thought is the constant loop in his head of “PLLLLEEEASE someone be touching me.”
 
-Clinically documented by his vet as "only mildly chunky," his primary method of locomotion is flinging his giant bod toward something and hoping for the best. Sometimes this strategy works, other times it breaks window shelf. He employs this method to break into Mom and Dad's room on occasions where the door is closed but not properly latched, an act known as Truding. While this was initially observed from inside the room (the observer only hearing a dramatic thump), further monitoring has revealed this behavior to be even sillier than previously believed. On one occasion, Simon was observed to suddenly break into a dead sprint from his spot on the couch, circumnavigating the living room before rounding the corner and launching himself at the door.
+Clinically documented by his vet as "only mildly chunky," his primary method of locomotion is flinging his giant bod toward something and hoping for the best. Sometimes this strategy works, other times it breaks window shelf. He employs this method to break into Mom and Dad's room on occasions where the door is closed but not properly latched, an act known as 'Truding. While this was initially observed from inside the room (the observer only hearing a dramatic thump), further monitoring has revealed this behavior to be even sillier than previously believed. On one occasion, Simon was observed to suddenly break into a dead sprint from his spot on the couch, circumnavigating the living room before rounding the corner and launching himself at the door.
 
 ## Signature Moves
 <div class="hatnote">For a full list of moves/poses, see <a href="/#/additional-observations/moves-and-poses">Moves and Poses</a>.</div>
 
 ### Biscuits
 
-Simon takes [Biscuit Making](/additional-observations/moves-and-poses.md?id=biscuit-making) very seriously. He is not to be disturbed while Making Biscuits, and this is the only time he does not want to be touched.
+Simon takes [Biscuit Making](/additional-observations/moves-and-poses.md?id=biscuit-making) very seriously. He is not to be disturbed while Making Biscuits, thus this is the only time he does not want to be touched.
 
 Dedication to his craft has spurred Simon to develop extraordinary new techniques, including the Three-Footed Biscuit and the astounding Four-Footed Biscuit. The Four-Footed Biscuit technique was previously thought to be apocryphal, the stuff of legend. Simon has successfully achieved this maneuver, but it has proven to be a bit unstable and chaotic. He also occasionally makes use of his Biscuit skills by standing on [Mom's](/people/sarah.md) butt and massaging her back, the closest he's ever come to paying rent.
 
-Due to his years of practice, dedication, and innovation, Simon has been elevated to the office of High Priest of Biscuits. Time will tell whether the [Twins](/additional-observations/cinnaboys-twins.md) will choose to follow in his pawprints as Biscuit Acolytes or if they take a different path.
+Due to his years of practice, dedication, and innovation, Simon has been elevated to the office of High Priest of Biscuits. [Horchata](/cats/horchata.md) has chosen to join him in this endeavor as his Biscuit Acoloyte, engaging in frequent intensive training sessions.
 
 ### Hangy Hands
 
@@ -80,7 +80,7 @@ Simon can often be found in an elongated loaf shape, resembling a [Caterpillar o
 - "Ham!"
     - Simon's most frequent vocalization (likely due to his brain consisting entirely of ham)
 - "I was never like this!"
-    - A false statement comparing Simon's behavior with his brother [Toothless](/cats/toothless.md) to the Twins ([Churro](/cats/churro.md) & [Horchata](/cats/horchata.md)) behavior with him, namely the tendency of the younger to initiate play by jumping on the elder and following them around when said play was not agreed upon. This is categorically untrue, as Simon tried frequently to get Toothless to play with him and misconstrued his running or slapping as play behavior and not an attempt to get away.
+    - A false statement comparing Simon's own behavior with his brother [Toothless](/cats/toothless.md) to the Twins' ([Churro](/cats/churro.md) & [Horchata](/cats/horchata.md)) behavior with him, namely the tendency of the younger to initiate play by jumping on the elder and following them around when said play was not agreed upon. This is categorically untrue, as Simon tried frequently to get Toothless to play with him and misconstrued his response of slapping or running away as play behavior and not an attempt to get away.
 - "Oh look a hand!"
     - An exclamation generally preceded by Simon being startled or walking away from the person the hand is attached to. The presence of said hand will immediately distract him, upon which he will return for pets.
 

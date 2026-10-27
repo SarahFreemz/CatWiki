@@ -13,5 +13,6 @@
         "Horchata",
         "infobox",
         "infoboxes"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/index.html"
 }
