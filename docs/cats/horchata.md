@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<th>Breed</th>
-			<td>Bug-Eyed Bug Guy</td>
+			<td>Bug-Eyed Bug Guy (<i>Felidae Insectus</i>)</td>
 		</tr>
 		<tr>
 			<th>Birthday</th>

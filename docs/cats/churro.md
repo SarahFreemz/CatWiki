@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <th>Breed</th>
-            <td>Bat Eared Sugar Glider</td>
+            <td>Bat-Eared Sugar Glider (<i>Chiroptera Breviceps</i>)</td>
         </tr>
         <tr>
             <th>Birthday</th>
@@ -42,7 +42,7 @@
 
 ## Biography
 
-Churro was found outside with his feline Mama, his [twin](/additional-observations/cinnaboys-twins.md) brother [Horchata](/cats/horchata.md), and two other kittens. [Dad](/people/jon.md)'s coworker took them in and fostered them until the Twins were old enough to move into the Fremont household. He took quickly to snuggling [Mom](/people/sarah.md), his preferred spot being as high up on her collarbones as he can get. He spends much of his day napping on Mom, completely Boneless, even beginning to drool when he is completely relaxed.
+Churro was found outside with his feline Mama, his [twin](/additional-observations/cinnaboys-twins.md) brother [Horchata](/cats/horchata.md), and two other kittens. [Dad](/people/jon.md)'s coworker took them in and fostered them until the Twins were old enough to move into the Fremont household. He took quickly to snuggling [Mom](/people/sarah.md), his preferred spot being as far up on her collarbones as he can get. He spends much of his day napping on Mom, completely Boneless, even beginning to drool when he is completely relaxed.
 
 ## Appearance & Style
 
